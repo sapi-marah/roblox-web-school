@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>
+            Remote Web Roblox - School
+        </title>
+        <style>
+            body {
+                margin : 0px;
+                overflow : hidden;
+            }
+            #frame {
+                width : 100vw;
+                height: 100vh;
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <img id='frame'>
+        <script>
+            (async function() {
+                let response = await fetch('/setViewport', {
+                    method : 'POST',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({
+                        width : window.innerWidth,
+                        height : window.innerHeight
+                    })
+                });
+                console.log(await response.text());
+            })();
+            window.addEventListener('click', async function(e) {
+                let response = await fetch('/click', {
+                    method : 'POST',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({
+                        x : e.clientX,
+                        y : e.clientY
+                    })
+                });
+                console.log(await response.text());
+            });
+            window.addEventListener('keydown', async function(e) {
+                let response = await fetch('/keydown', {
+                    method : 'POST',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({
+                        key : e.key
+                    })
+                });
+                console.log(await response.text());
+            });
+            window.addEventListener('keyup', async function(e) {
+                let response = await fetch('/keyup', {
+                    method : 'POST',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({
+                        key : e.key
+                    })
+                });
+                console.log(await response.text());
+            });
+            let frame = document.getElementById('frame');
+            setInterval(async function() {
+                let response = await fetch('/screenshot', {
+                    method : 'GET'
+                });
+                frame.src = await response.text();
+            }, 750);
+        </script>
+    </body>
+</html>
