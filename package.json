@@ -1,0 +1,15 @@
+{
+  "name" : "roblox-web-school",
+  "version" : "1.0",
+  "description" : "Open the web roblox on any school device!",
+  "dependencies" : {
+    "express" : "*",
+    "puppeteer" : "*",
+    "puppeteer-extra" : "*",
+    "puppeteer-extra-plugin-stealth" : "*"
+  },
+  "scripts" : {
+    "start" : "node ./server.js"
+  },
+  "author" : "Ian C. Vu"
+}
