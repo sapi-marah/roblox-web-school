@@ -5,7 +5,7 @@ It uses `express` to host the server so you can send requests to the headless br
 ## Installing Node.js
 Since this project runs on Node.js you're going to need to install Node.js from the offical site. So enter the [offical site's download page](https://nodejs.org/en/download), and select your operating system then copy the text the website gives you by clicking Copy to Clipboard. Then paste it into your terminal.
 ## Downloading the project
-Open our Github repository and download our project as a ZIP file by clicking Code then selecting ZIP. Then extract the ZIP file.
+Open our Github repository and download our project as a ZIP file by clicking Code then selecting Download ZIP. Then extract the ZIP file.
 ## Installing the needed resources
 ### Installing the libaries.
 Our project runs on Node.js libaries. Which means, installing them is necessary if you want the code to actually run. First, navigate to the extracted folder.
